@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="text-center">Conversor Militar</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="codification">Codificación:</label>
+                        <select class="form-control" id="codification" name="codification">
+                            <option value="binary">Binario</option>
+                            <option value="morse">Morse</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-6">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="action" id="encode" value="encode"
+                               checked>
+                        <label class="form-check-label" for="encode">Codificar</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="action" id="decode" value="decode">
+                        <label class="form-check-label" for="decode">Decodificar</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-primary btn-block">Traducir</button>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="result">Resultado:</label>
+                        <textarea class="form-control" id="result" rows="5" readonly>{{ translation }}</textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
