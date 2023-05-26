@@ -14,7 +14,6 @@ def convert(request):
         print(action)
         print(message)
 
-
         if action == 'encode':
             if codification == 'binary':
                 binary_tree = CodeTreeADT(binary=True)
