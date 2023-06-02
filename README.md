@@ -56,7 +56,8 @@ Algunos comandos son:
 - Se puede decodificar un mensaje utilizando el método decode(message), donde el mensaje se divide en códigos y se busca el carácter asociado a cada código.
 
 ## Aplicacion:
-
+- Permite ingresar texto para ser codificado. Ya sea codigo binario o codigo morse.
+- Permite descodificar codigo binario o codigo morse
 
 ## Créditos
 
