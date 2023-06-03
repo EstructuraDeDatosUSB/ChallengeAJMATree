@@ -96,17 +96,20 @@ class CodeTreeADT:
         return self._recursive_height(self.root)
 
     def encode(self, message):
-        encoded = ""
+        encoded = []
         for char in message:
             if self.morse and char == " ":
-                encoded += "/" + " "
+                encoded.append("/")
             else:
                 if self.morse:
                     char = char.upper()
                 code = self.reverse_search(char)
+
                 if code is not None:
-                    encoded += code + " "
-        return encoded
+                    encoded.append(code)
+                else:
+                    continue
+        return " ".join(encoded)
 
     def decode(self, message):
         decoded = ""
